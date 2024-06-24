@@ -1,0 +1,90 @@
+.sentiment-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 600px;
+  background-color: rgb(0, 0, 0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+
+  .sentiment-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #e7f1e9fb;
+  }
+
+  .sentiment-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      padding: 10px;
+      background-color: rgb(0, 0, 0);
+      font-size: 1rem;
+      border: 2px solid #ccc;
+      border-radius: 3px;
+      margin-bottom: 20px;
+      resize: none;
+      color: white;
+      border-color: #03941b6e;
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 255, 85, 0.5);
+      }
+    }
+
+    button {
+      padding: 5px 20px;
+      font-size: 1rem;
+      color: #fff;
+      background-color: #03941b6e;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background-color 0.1s ease;
+
+      &:hover {
+        background-color: #01701381;
+      }
+    }
+  }
+
+  .Cyber-Related {
+    color: red;
+    text-shadow: 0 0 10px rgba(224, 11, 11, 0.7),
+      0 0 200px rgba(224, 11, 11, 0.5), 0 0 15px rgba(224, 11, 11, 0.3);
+  }
+
+  p {
+    font-size: 1rem;
+    color: #f2fff4ee;
+    margin-top: 70px;
+    text-align: center;
+    text-shadow: 0 0 35px rgba(18, 224, 11, 0.349),
+      0 0 190px rgba(11, 224, 39, 0.5), 0 0 15px rgba(11, 224, 11, 0.3);
+  }
+
+  .loader {
+    margin-top: 60px;
+    width: 34px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 5px solid;
+    border-color: #03941be1 #03030360;
+    animation: l1 1s infinite;
+  }
+  @keyframes l1 {
+    to {
+      transform: rotate(0.5turn);
+    }
+  }
+}
