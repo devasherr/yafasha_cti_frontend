@@ -3,6 +3,15 @@ import "./fileupload.scss";
 import { Link } from "react-router-dom";
 
 const FileUpload = () => {
+  const scrollToBottom = () => {
+    const defaultScrollHeight = 1000;
+
+    window.scrollTo({
+      top: defaultScrollHeight,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="upload-container">
       <div className="upload-infos">
@@ -17,7 +26,7 @@ const FileUpload = () => {
           <ul>
             <li>
               <Link to="/sentiment" className="upload-redirect">
-                <span style={{ color: "rgba(0, 255, 85, 0.5)" }}>P</span>reform
+                <span style={{ color: "rgba(0, 255, 85, 0.5)" }}>P</span>erform
                 sentiment
               </Link>
             </li>
@@ -38,7 +47,7 @@ const FileUpload = () => {
       <div className="upload-perform">
         <p>Provide a CSV file for automated process</p>
         <input type="file" />
-        <button>AUTOMATE</button>
+        <button onClick={scrollToBottom}>AUTOMATE</button>
       </div>
       <h3 className="upload-result-info">Results of analyzed FILE</h3>
     </div>
