@@ -1,0 +1,251 @@
+$LOC: #3633ff;
+$THR: rgb(238, 18, 18);
+$THR-A: rgb(15, 133, 15);
+$ORG: #fa9006;
+$TECH: rgb(184, 196, 18);
+$SEC-T: rgb(3, 193, 226);
+$VUL: rgb(196, 58, 173);
+$PER: #dda0dd;
+$PROD: rgb(114, 75, 75);
+$DATE: rgb(73, 197, 114);
+
+.ner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(0, 0, 0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+
+  .ner-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #e7f1e9fb;
+    width: 100%;
+  }
+
+  .ner-body {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    width: 100%;
+  }
+
+  .ner-sidebar {
+    ul {
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        padding-bottom: 25px;
+        border-bottom: 1px solid #ccc;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        .rep {
+          width: 15px;
+          height: 15px;
+          border-radius: 3px;
+          position: absolute;
+          display: flex;
+          left: 85%;
+        }
+        .LOC {
+          background-color: $LOC;
+          box-shadow: 0px 0px 15px $LOC;
+        }
+        .THR {
+          background-color: $THR;
+          box-shadow: 0px 0px 15px $THR;
+        }
+        .THR-A {
+          background-color: $THR-A;
+          box-shadow: 0px 0px 15px $THR-A;
+        }
+        .ORG {
+          background-color: $ORG;
+          box-shadow: 0px 0px 15px $ORG;
+        }
+        .TECH {
+          background-color: $TECH;
+          box-shadow: 0px 0px 15px $TECH;
+        }
+        .SEC-T {
+          background-color: $SEC-T;
+          box-shadow: 0px 0px 15px $SEC-T;
+        }
+        .VUL {
+          background-color: $VUL;
+          box-shadow: 0px 0px 15px $VUL;
+        }
+        .PER {
+          background-color: $PER;
+          box-shadow: 0px 0px 15px $PER;
+        }
+        .PROD {
+          background-color: $PROD;
+          box-shadow: 0px 0px 15px $PROD;
+        }
+        .DATE {
+          background-color: $DATE;
+          box-shadow: 0px 0px 15px $DATE;
+        }
+      }
+    }
+  }
+
+  .ner-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    textarea {
+      width: 90%;
+      height: 100px;
+      padding: 10px;
+      background-color: rgb(0, 0, 0);
+      font-size: 1rem;
+      border: 2px solid #ccc;
+      border-radius: 3px;
+      margin-bottom: 20px;
+      resize: none;
+      color: white;
+      border-color: #03941b6e;
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 255, 85, 0.5);
+      }
+    }
+
+    button {
+      padding: 5px 20px;
+      font-size: 1rem;
+      color: #fff;
+      background-color: #03941b6e;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background-color 0.1s ease;
+
+      &:hover {
+        background-color: #01701381;
+      }
+    }
+  }
+
+  p {
+    font-size: 1rem;
+    color: #f2fff4ee;
+    margin-top: 70px;
+    text-align: center;
+
+    .ner-item {
+      //   background-color: red;
+      margin-right: 10px; // Adjust as needed for spacing
+      margin-bottom: 35px;
+      display: inline-block;
+      padding: 0px 2px;
+      border-radius: 2px;
+      color: #fff; // Default text color for all items
+      position: relative;
+
+      &::after {
+        content: attr(data-text); // Use attribute value as content
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        font-size: 0.8rem; // Adjust as needed
+        text-align: center;
+        color: #fff; // Text color for content
+      }
+
+      // Specific styles based on class
+      &.LOC {
+        background-color: $LOC;
+      }
+      &.LOC::after {
+        color: $LOC;
+      }
+      &.THR {
+        background-color: $THR;
+      }
+      &.THR::after {
+        color: $THR;
+      }
+      &.THR-A {
+        background-color: $THR-A;
+      }
+      &.THR-A::after {
+        color: $THR-A;
+      }
+      &.ORG {
+        background-color: $ORG;
+      }
+      &.ORG::after {
+        color: $ORG;
+      }
+      &.TECH {
+        background-color: $TECH;
+      }
+      &.TECH::after {
+        color: $TECH;
+      }
+      &.SEC-T {
+        background-color: $SEC-T;
+      }
+      &.SEC-T::after {
+        color: $SEC-T;
+      }
+      &.VUL {
+        background-color: $VUL;
+      }
+      &.VUL::after {
+        color: $VUL;
+      }
+      &.PER {
+        background-color: $PER;
+      }
+      &.PER::after {
+        color: $PER;
+      }
+      &.PROD {
+        background-color: $PROD;
+      }
+      &.PROD::after {
+        color: $PROD;
+      }
+      &.DATE {
+        background-color: $DATE;
+      }
+      &.DATE::after {
+        color: $DATE;
+      }
+    }
+  }
+
+  .loader {
+    margin-top: 50px;
+    width: 34px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 5px solid;
+    border-color: #03941be1 #03030360;
+    animation: l1 1s infinite;
+  }
+  @keyframes l1 {
+    to {
+      transform: rotate(0.5turn);
+    }
+  }
+}
