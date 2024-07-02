@@ -2,6 +2,16 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./classifier.scss";
 
+const resultWordMap = {
+  Phishing_and_Social_Engineering: "Phishing",
+  Supply_Chain_Attack: "Supply Chain Attack",
+  Zero_day_Exploit: "Zero day Exploit",
+  Ransomware: "Ransomware",
+  DDoS: "DDoS",
+  Data_Breach: "Data_Breach",
+  OTHER: "OTHER",
+};
+
 const Classifier = () => {
   const [classifierResult, setClassifierResult] = useState([]);
   const [value, setValue] = useState({
@@ -32,7 +42,7 @@ const Classifier = () => {
   return (
     <>
       <div className="classifier-container">
-        <div className="classifier-title">Attack Classifier</div>
+        <div className="classifier-title">Text Classification</div>
         <div className="classifier-form">
           <textarea
             type="text"
@@ -44,7 +54,11 @@ const Classifier = () => {
           <button onClick={getAttackClassifier}>process</button>
         </div>
 
-        {loading ? <div className="loader"></div> : <p>{classifierResult}</p>}
+        {loading ? (
+          <div className="loader"></div>
+        ) : (
+          <p>{resultWordMap[classifierResult]}</p>
+        )}
       </div>
     </>
   );
