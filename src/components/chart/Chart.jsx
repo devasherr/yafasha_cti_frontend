@@ -8,16 +8,118 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const data = [
-  { name: "January", Total: 400 },
-  { name: "February", Total: 2100 },
-  { name: "March", Total: 900 },
-  { name: "April", Total: 1600 },
-  { name: "May", Total: 900 },
-  { name: "June", Total: 1700 },
-];
+const Chart = ({ data, aspect, title }) => {
+  const result = data
+    ? [
+        {
+          name: "",
+          Total: 0,
+        },
+        {
+          name: "LOC",
+          Total: (data.ner["B-LOCATION"] || 0) + (data.ner["I-LOCATION"] || 0),
+        },
+        {
+          name: "THR",
+          Total: (data.ner["B-THREAT"] || 0) + (data.ner["I-THREAT"] || 0),
+        },
+        {
+          name: "THR-A",
+          Total:
+            (data.ner["B-THREAT-ACTOR"] || 0) +
+            (data.ner["I-THREAT-ACTOR"] || 0),
+        },
+        {
+          name: "ORG",
+          Total:
+            (data.ner["B-ORGANIZATION"] || 0) +
+            (data.ner["I-ORGANIZATION"] || 0),
+        },
+        {
+          name: "TECH",
+          Total:
+            (data.ner["B-TECHNOLOGY"] || 0) + (data.ner["I-TECHNOLOGY"] || 0),
+        },
+        {
+          name: "SEC-T",
+          Total:
+            (data.ner["B-SECURITY-TEAM"] || 0) +
+            (data.ner["I-SECURITY-TEAM"] || 0),
+        },
+        {
+          name: "VUL",
+          Total:
+            (data.ner["B-VULNERABILITY"] || 0) +
+            (data.ner["I-VULNERABILITY"] || 0),
+        },
+        {
+          name: "PER",
+          Total: (data.ner["B-PERSON"] || 0) + (data.ner["I-PERSON"] || 0),
+        },
+        {
+          name: "PROD",
+          Total: (data.ner["B-PRODUCT"] || 0) + (data.ner["I-PRODUCT"] || 0),
+        },
+        {
+          name: "DATE",
+          Total: (data.ner["B-DATE"] || 0) + (data.ner["I-DATE"] || 0),
+        },
+        {
+          name: "",
+          Total: 0,
+        },
+      ]
+    : [
+        {
+          name: "",
+          Total: 0,
+        },
+        {
+          name: "LOC",
+          Total: 0,
+        },
+        {
+          name: "THR",
+          Total: 0,
+        },
+        {
+          name: "THR-A",
+          Total: 0,
+        },
+        {
+          name: "ORG",
+          Total: 0,
+        },
+        {
+          name: "TECH",
+          Total: 0,
+        },
+        {
+          name: "SEC-T",
+          Total: 0,
+        },
+        {
+          name: "VUL",
+          Total: 0,
+        },
+        {
+          name: "PER",
+          Total: 0,
+        },
+        {
+          name: "PROD",
+          Total: 0,
+        },
+        {
+          name: "DATE",
+          Total: 0,
+        },
+        {
+          name: "",
+          Total: 0,
+        },
+      ];
 
-const Chart = ({ aspect, title }) => {
   return (
     <div className="chart">
       <div className="title">{title}</div>
@@ -25,7 +127,7 @@ const Chart = ({ aspect, title }) => {
         <AreaChart
           width={730}
           height={250}
-          data={data}
+          data={result}
           margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
         >
           <defs>

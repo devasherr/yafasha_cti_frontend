@@ -11,6 +11,10 @@ const NER = () => {
   const [resolved, setResolved] = useState(false);
   const [loading, setLoading] = useState(false);
   const getNerAnalysis = () => {
+    if (!value.text) {
+      return;
+    }
+
     setLoading(true);
     setResolved(true);
     //todo capitalize the text

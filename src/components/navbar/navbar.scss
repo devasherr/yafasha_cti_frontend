@@ -11,7 +11,17 @@
     padding: 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: right;
+    font-size: 13px;
+
+    .the-boss {
+      font-size: 17px;
+      font-weight: 700;
+      color: rgba(0, 255, 85, 0.664);
+      margin-left: 5px;
+      text-shadow: 0 0 10px rgba(5, 180, 63, 0.918),
+        0 0 200px rgba(3, 126, 44, 0.795), 0 0 15px rgba(0, 255, 85, 0.664);
+    }
 
     .search {
       display: flex;

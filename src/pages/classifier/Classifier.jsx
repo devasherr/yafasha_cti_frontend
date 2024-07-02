@@ -10,6 +10,10 @@ const Classifier = () => {
   const [loading, setLoading] = useState(false);
 
   const getAttackClassifier = () => {
+    if (!value.text) {
+      return;
+    }
+
     setLoading(true);
     axios
       .post("http://localhost:5000/classifier", {

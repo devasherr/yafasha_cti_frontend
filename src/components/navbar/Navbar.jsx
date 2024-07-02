@@ -10,8 +10,10 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="wrapper">
-        <div className="search"></div>
-        <div className="items">
+        <div>
+          CTI tool by <span className="the-boss">Yafet</span>
+        </div>
+        {/* <div className="items">
           <div className="item">
             <DarkModeOutlinedIcon
               className="icon"
@@ -29,7 +31,7 @@ const Navbar = () => {
               className="avatar"
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

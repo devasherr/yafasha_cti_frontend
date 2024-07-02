@@ -10,6 +10,10 @@ const Sentiment = () => {
   const [loading, setLoading] = useState(false);
 
   const getSentimentAnalysis = () => {
+    if (!value.text) {
+      return;
+    }
+
     setLoading(true);
     axios
       .post("http://localhost:5000/sentiment", {

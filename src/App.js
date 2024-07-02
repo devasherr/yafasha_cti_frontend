@@ -10,6 +10,7 @@ import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import SentimentList from "./pages/list/SentimentList";
 import ClassifierList from "./pages/list/ClassifierList";
+import PreProcessList from "./pages/list/PreProcessList";
 import NERList from "./pages/list/NERList";
 
 function App() {
@@ -28,6 +29,14 @@ function App() {
               <Route
                 path="new"
                 element={<New inputs={userInputs} title="Add New User" />}
+              />
+            </Route>
+            <Route path="preprocess">
+              <Route index element={<PreProcessList />} />
+              <Route path=":productId" element={<Single />} />
+              <Route
+                path="new"
+                element={<New inputs={productInputs} title="Add New Product" />}
               />
             </Route>
             <Route path="sentiment">

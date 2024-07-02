@@ -25,7 +25,6 @@
     gap: 15px;
 
     .featuredChart {
-      // background-color: red;
       width: 150px;
       height: 150px;
     }
@@ -33,6 +32,7 @@
     .title {
       font-weight: 500;
       color: gray;
+      font-size: 14px;
     }
 
     .amount {
@@ -47,7 +47,7 @@
     }
 
     .summary {
-      width: 100%;
+      width: 80%;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -56,15 +56,17 @@
         text-align: center;
 
         .itemTitle {
-          font-size: 14px;
+          font-size: 16px;
           color: gray;
         }
 
         .itemResult {
           display: flex;
+          // background-color: red;
           align-items: center;
+          justify-content: center;
           margin-top: 10px;
-          font-size: 14px;
+          font-size: 20px;
 
           &.positive {
             color: green;
